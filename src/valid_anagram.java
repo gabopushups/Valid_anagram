@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 
 public class valid_anagram {
+
+    // This is just extra code that I used to enforce myself to work with all Java features
     private String s1;
     private String s2;
 
@@ -83,7 +85,8 @@ public class valid_anagram {
 
         // **** **** **** **** SOLUTION 2 **** **** **** **** **** **** ****
         //
-        // Use HashMaps
+        // Use HashMaps: The time complexity is O(n) since we'll only need to traverse the arrays
+        //
         HashMap<Character, Integer> myHash1 = new HashMap<Character, Integer>();
         HashMap<Character, Integer> myHash2 = new HashMap<Character, Integer>();
         for (int i =0; i<ch1.length;i++){
