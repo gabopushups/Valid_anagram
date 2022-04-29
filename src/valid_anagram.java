@@ -78,12 +78,31 @@ public class valid_anagram {
         // Using Arrays.equals(ch1,ch2)
         // https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#equals-char:A-char:A-
 
-        boolean result = Arrays.equals(ch1,ch2) ?true:false;
-        System.out.println("Are they anagrams? " +result);
+        boolean result1 = Arrays.equals(ch1,ch2);
+        System.out.println("Method 1: Are they anagrams? " +result1);
 
         // **** **** **** **** SOLUTION 2 **** **** **** **** **** **** ****
         //
         // Use HashMaps
+        HashMap<Character, Integer> myHash1 = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> myHash2 = new HashMap<Character, Integer>();
+        for (int i =0; i<ch1.length;i++){
+            char myChar1=ch1[i];
+            if(myHash1.get(myChar1)== null){
+                myHash1.put(myChar1,1);
+            } else{
+                myHash1.put(myChar1,myHash1.get(myChar1)+1);
+            }
+            char myChar=ch2[i];
+            if(myHash2.get(myChar)== null){
+                myHash2.put(myChar,1);
+            } else{
+                myHash2.put(myChar,myHash2.get(myChar)+1);
+            }
+        }
+
+        boolean result2 = myHash1.equals(myHash2);
+        System.out.println("Method 2: Are they anagrams? " +result2);
 
         //
     }
